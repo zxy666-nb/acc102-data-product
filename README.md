@@ -29,7 +29,7 @@ Frontend: Developed with streamlit using an advanced layout (st.tabs, st.columns
 
 AI Integration: Connected to the DeepSeek API for automated, real-time strategic interpretation of market conditions.
 
-5.Security & API Key Management
+5. 🔒 Security & API Key Management
 In line with professional software development standards, this project implements a dual-layer security strategy for API credentials:
 
 Cloud Deployment: The live application utilizes Streamlit’s encrypted st.secrets management, ensuring the API key is never exposed in the source code.
