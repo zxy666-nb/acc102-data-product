@@ -7,7 +7,7 @@
 Retail investors often find it difficult to visualize how abstract macroeconomic data (like inflation or employment figures) impacts the specific assets they hold (e.g., TSLA, NVDA, or BTC). This interactive dashboard bridges that gap by providing a unified interface to correlate **complex macroeconomic indicators** with **real-time asset performance**, empowering users with data-backed strategic context.
 
 ## 2. Product Access
-* **Live Web App:** [Your Streamlit App URL Here]
+* **Live Web App:** https://finscopemacro.streamlit.app/
 * **Demo Video (1-3 mins):** [Your Demo Video Link Here]
 
 ## 3. Data Sources
