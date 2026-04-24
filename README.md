@@ -1,58 +1,43 @@
-Interactive Macro-Finance Dashboard & AI Strategy Analyzer
-Author: Xiaoyue.Zhang
+# 📊 Macroeconomic & Financial Asset Dashboard
 
-1. Problem Definition & Target User
-Retail investors and business students often struggle to understand how macroeconomic shifts (like inflation) directly impact specific asset prices. This interactive dashboard bridges that gap by providing a unified visualization tool that calculates correlations and leverages AI to generate strategic PEST (Political, Economic, Social, Technological) insights.
+**Author:** Xiaoyue.Zhang  
+**Module:** ACC102 Mini Assignment - Track 4 (Interactive Tool)
 
-Target Users: * Business and Accounting students analyzing market drivers.
+## 1. Problem & Target User
+Retail investors often find it difficult to visualize how abstract macroeconomic data (like inflation or employment figures) impacts the specific assets they hold (e.g., TSLA, NVDA, or BTC). This interactive dashboard bridges that gap by providing a unified interface to correlate **complex macroeconomic indicators** with **real-time asset performance**, empowering users with data-backed strategic context.
 
-Retail traders seeking data-backed context for price movements.
+## 2. Product Access
+* **Live Web App:** [Your Streamlit App URL Here]
+* **Demo Video (1-3 mins):** [Your Demo Video Link Here]
 
-2. Product Access
-Live Web App: [在此处粘贴你的 Streamlit 链接]
+## 3. Data Sources
+* **Financial Market Data:** Real-time historical price data (Open, High, Low, Close, Volume) fetched dynamically via the `yfinance` API.
+* **Macroeconomic Indicators:** US economic data (CPI YoY, Non-Farm Payrolls, Jobless Claims) fetched directly from the **Federal Reserve Economic Data (FRED) API**.
+* **Simulation Engine:** Includes a robust fallback mechanism using `numpy` and `pandas` to ensure analytical stability during API rate-limiting or maintenance.
 
-Demo Video (1-3 mins): [在此处粘贴你的演示视频链接]
+## 4. Technical Execution
+* **Data Alignment:** Implemented `.resample('MS').last()` to align daily market volatility with monthly macroeconomic reporting cycles.
+* **Statistical Engine:** Calculated the **Pearson Correlation Coefficient (r)** to quantify the linear strength between inflation trends and asset price action.
+* **Modern UI:** Built with `streamlit` using a multi-tab architecture (`st.tabs`) for clear logical separation between Macro, Market, and Correlation modules.
+* **AI Strategy:** Integrated the **DeepSeek-V3** large language model (via OpenAI-compatible API) to provide automated PEST strategic analysis.
 
-3. Data Sources
-Financial Data: Real-time historical monthly close prices fetched via the yfinance API.
+## 5. 🔒 Security & Professional Practice
+To adhere to professional cybersecurity standards and XJTLU academic integrity:
+* **Credential Protection:** The DeepSeek API key is managed via **Streamlit Secrets** (`st.secrets`). This ensures that sensitive credentials are never "hardcoded" or leaked into the public GitHub repository history.
+* **Error Handling:** The application is designed with a "Graceful Failure" logic—if an API is unavailable, the tool switches to an "Academic Mode" to ensure the user experience is not interrupted.
 
-Macroeconomic Indicators: Simulated CPI (Consumer Price Index) YoY and NFP (Non-Farm Payroll) data, structured for academic correlation testing.
+## 6. Key Findings & Insights
+The dashboard automatically generates interpretations based on data outputs:
+* **Market Decoupling:** In periods where $|r| < 0.3$, the tool identifies a "decoupling" effect, suggesting that price action is driven by **institutional liquidity sweeps** rather than fundamental macro shifts.
+* **Inverse Sensitivity:** The analysis tracks how high CPI prints often lead to capital rotation into "safe havens," a trend clearly visualized in the combined line charts.
 
-Scope: Rolling 12-month analysis based on user-selected tickers.
+## 7. How to Run Locally
+1. Clone this repository to your local machine.
+2. Install the necessary dependencies:  
+   `pip install -r requirements.txt`
+3. Launch the dashboard:  
+   `streamlit run app.py`
 
-4. Technical Execution
-Data Pipeline: Utilized pandas for multi-source data merging, resampling (daily to monthly), and temporal alignment.
-
-Statistical Logic: Implemented Pearson Correlation Coefficient calculations to quantify the linear relationship between inflation and asset performance.
-
-Frontend: Developed with streamlit using an advanced layout (st.tabs, st.columns) for a professional user experience.
-
-AI Integration: Connected to the DeepSeek API for automated, real-time strategic interpretation of market conditions.
-
-5. 🔒 Security & API Key Management
-In line with professional software development standards, this project implements a dual-layer security strategy for API credentials:
-
-Cloud Deployment: The live application utilizes Streamlit’s encrypted st.secrets management, ensuring the API key is never exposed in the source code.
-
-Local Execution: To protect developer credentials while maintaining functionality, the app includes a dynamic sidebar password input. Users running the repo locally are prompted to provide their own key, ensuring that no sensitive "hardcoded" strings are committed to the public GitHub history.
-
-6. Key Findings & Analysis
-The tool provides automated insights based on mathematical outputs:
-
-Correlation Decoupling: In scenarios where the correlation (r) is low (e.g., < 0.3), the tool identifies a "decoupling" effect.
-
-Market Insight: As demonstrated in the analysis, low correlation suggests that price action is likely driven by institutional liquidity sweeps or macro-political events rather than basic economic fundamentals—adding a layer of sophisticated interpretation beyond simple charting.
-
-7. How to Run Locally
-Clone the repository: git clone [Your Repo URL]
-
-Install dependencies: pip install -r requirements.txt
-
-Run the app: streamlit run app.py
-
-Note: Enter your DeepSeek API Key in the sidebar to activate the "Strategic Analysis" module.
-
-8. Reflection & Limitations
-Limitations: The macro data currently uses a simulated walk to ensure consistency for the assignment. Future iterations will integrate the fredapi for live Federal Reserve data.
-
-Scalability: The architecture is designed to easily scale from simple correlation to multi-variable regression analysis.
+## 8. Limitations & Future Development
+* **Limitations:** The current model focuses on linear correlation; future updates will incorporate Non-linear Regression for better anomaly detection.
+* **Future Scope:** Integration of real-time Sentiment Analysis from financial news to supplement the PEST strategy module.
