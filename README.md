@@ -1,7 +1,3 @@
-这份完整的 README.md 是专门为你优化的版本。它不仅包含了项目的所有技术细节，还特别强调了你对 API Key 的保护策略，以及你在代码中实现的深度市场分析（如流动性扫损等）。
-
-你可以直接将以下内容全部复制并覆盖到你 GitHub 仓库的 README.md 文件中。
-
 Interactive Macro-Finance Dashboard & AI Strategy Analyzer
 Author: Xiaoyue.Zhang
 
