@@ -167,7 +167,7 @@ with t3:
 
 with t4:
     st.subheader("AI Strategic Analysis")
-    API_KEY = st.secrets["DEEPSEEK_API_KEY"] 
+    API_KEY = st.secrets["sk-d39732fbf45a4bad9c29efa1a9edba0a"] 
     if st.button("Generate Strategy"):
         with st.spinner("Analyzing..."):
             try:
