@@ -8,7 +8,7 @@ Retail investors often find it difficult to visualize how abstract macroeconomic
 
 ## 2. Product Access
 * **Live Web App:** https://finscopemacro.streamlit.app/
-* **Demo Video (1-3 mins):** [Your Demo Video Link Here]
+* **Demo Video (1-3 mins):** https://video.xjtlu.edu.cn/Mediasite/Play/35b90da403b44184ac748d0c11e680711d
 
 ## 3. Data Sources
 * **Financial Market Data:** Real-time historical price data (Open, High, Low, Close, Volume) fetched dynamically via the `yfinance` API.
